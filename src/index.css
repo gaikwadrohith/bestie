@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Dancing+Script:wght@500;700&family=Noto+Serif+Telugu:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════
+   DESIGN TOKENS — Sakura Day · Cosmic Night
+   ══════════════════════════════════════════════════════ */
+:root {
+  --bg:          #fdf6f0;
+  --bg2:         #fef0f5;
+  --card-bg:     rgba(255,255,255,0.78);
+  --card-border: rgba(255,182,206,0.5);
+  --text-h:      #1a0a1e;
+  --text-b:      #3d1a2e;
+  --text-soft:   #c0407a;
+  --accent:      #e8276e;
+  --accent2:     #ff8fab;
+  --accent3:     #ffb347;
+  --glow:        rgba(232,39,110,0.38);
+  --glow2:       rgba(255,179,71,0.22);
+  --shadow-card: 0 8px 48px rgba(232,39,110,0.14), 0 2px 16px rgba(0,0,0,0.05);
+  --shadow-btn:  0 4px 24px rgba(232,39,110,0.45);
+  --divider:     rgba(232,39,110,0.13);
+  --footer-text: rgba(192,64,122,0.6);
+  --nav-bg:      rgba(253,246,240,0.88);
+  --toggle-bg:   rgba(255,255,255,0.62);
+  --btn-yes:     linear-gradient(135deg,#e8276e,#ff6b9d);
+  --btn-no-col:  #c0407a;
+  --btn-no-brd:  rgba(192,64,122,0.4);
+}
+
+[data-theme="dark"] {
+  --bg:          #060612;
+  --bg2:         #080820;
+  --card-bg:     rgba(12,8,32,0.88);
+  --card-border: rgba(150,80,220,0.35);
+  --text-h:      #f0e8ff;
+  --text-b:      #c8b0e8;
+  --text-soft:   #b88fea;
+  --accent:      #a855f7;
+  --accent2:     #e879f9;
+  --accent3:     #fbbf24;
+  --glow:        rgba(168,85,247,0.45);
+  --glow2:       rgba(251,191,36,0.18);
+  --shadow-card: 0 8px 48px rgba(168,85,247,0.2), 0 0 80px rgba(168,85,247,0.07);
+  --shadow-btn:  0 4px 24px rgba(168,85,247,0.55);
+  --divider:     rgba(168,85,247,0.14);
+  --footer-text: rgba(168,85,247,0.55);
+  --nav-bg:      rgba(6,6,18,0.92);
+  --toggle-bg:   rgba(12,8,32,0.72);
+  --btn-yes:     linear-gradient(135deg,#7c3aed,#a855f7);
+  --btn-no-col:  #b88fea;
+  --btn-no-brd:  rgba(168,85,247,0.35);
+}
+
+/* ── Reset ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{height:100%;font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  height:100%;background:var(--bg);color:var(--text-b);
+  font-family:'Poppins',sans-serif;overflow:hidden;cursor:none;
+  transition:background .6s ease,color .5s ease;
+}
+@media(max-height:600px){body{overflow-y:auto}}
+
+/* ── Aurora orb animation ── */
+@keyframes aurora-drift{
+  0%  {transform:translate(0,0) scale(1) rotate(0deg)}
+  100%{transform:translate(var(--dx,40px),var(--dy,-30px)) scale(var(--ds,1.1)) rotate(var(--dr,15deg))}
+}
+
+/* ── Animated conic-gradient border ── */
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spin-border{to{--ang:360deg}}
+.card-border-anim{
+  position:absolute;inset:-1.5px;border-radius:29px;z-index:-1;
+  background:conic-gradient(from var(--ang),var(--accent) 0%,var(--accent2) 25%,transparent 50%,var(--accent2) 75%,var(--accent) 100%);
+  animation:spin-border 6s linear infinite;
+}
+
+/* ── Shimmer text ── */
+@keyframes shimmer-text{0%{background-position:0% center}100%{background-position:300% center}}
+.shimmer-text{
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3),var(--accent));
+  background-size:300% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shimmer-text 3s linear infinite;
+}
+
+/* ── GIF heartbeat ── */
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.06)}30%{transform:scale(1)}45%{transform:scale(1.04)}}
+
+/* ── Glow pulse on yes btn ── */
+@keyframes glow-pulse{
+  0%,100%{box-shadow:var(--shadow-btn),0 0 0 0 var(--glow)}
+  50%    {box-shadow:var(--shadow-btn),0 0 28px 4px var(--glow)}
+}
+.glow-pulse{animation:glow-pulse 2.8s ease-in-out infinite}
+
+/* ── Heart burst ── */
+@keyframes burst-out{
+  0%  {opacity:1;transform:translate(-50%,-50%) scale(0)}
+  60% {opacity:1;transform:translate(calc(-50% + var(--bx)),calc(-50% + var(--by))) scale(1.2)}
+  100%{opacity:0;transform:translate(calc(-50% + var(--bx)*1.6),calc(-50% + var(--by)*1.6)) scale(.8)}
+}
+
+/* ── Runaway NO button ── */
+.runaway-btn{
+  position:fixed!important;
+  transition:left .4s cubic-bezier(.34,1.56,.64,1),top .4s cubic-bezier(.34,1.56,.64,1)!important;
+  z-index:9999;cursor:default!important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}
