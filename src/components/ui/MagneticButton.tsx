@@ -1,5 +1,5 @@
 import { useRef, useCallback, type MouseEvent, type ReactNode } from 'react';
-import { cn } from '@/utils';
+import { isTouchDevice } from '@/utils';
 
 interface Props {
   children: ReactNode;
@@ -13,17 +13,13 @@ export function MagneticButton({ children, className, onClick, style, disabled }
   const ref = useRef<HTMLButtonElement>(null);
 
   const handleMouseMove = useCallback((e: MouseEvent<HTMLButtonElement>) => {
+    if (isTouchDevice) return;
     const btn = ref.current;
     if (!btn) return;
     const rect = btn.getBoundingClientRect();
-    const dx = (e.clientX - (rect.left + rect.width  / 2)) * 0.28;
-    const dy = (e.clientY - (rect.top  + rect.height / 2)) * 0.28;
+    const dx = (e.clientX - (rect.left + rect.width  / 2)) * 0.26;
+    const dy = (e.clientY - (rect.top  + rect.height / 2)) * 0.26;
     btn.style.transform = `translate(${dx}px,${dy}px) scale(1.04)`;
-    // Spotlight coords
-    const mx = ((e.clientX - rect.left) / rect.width  * 100) + '%';
-    const my = ((e.clientY - rect.top)  / rect.height * 100) + '%';
-    btn.style.setProperty('--mx', mx);
-    btn.style.setProperty('--my', my);
   }, []);
 
   const handleMouseLeave = useCallback(() => {
@@ -37,8 +33,8 @@ export function MagneticButton({ children, className, onClick, style, disabled }
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       disabled={disabled}
-      className={cn('cursor-none', className)}
-      style={style}
+      className={className}
+      style={{ cursor: isTouchDevice ? 'pointer' : 'none', ...style }}
     >
       {children}
     </button>
