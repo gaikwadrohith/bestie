@@ -33,7 +33,7 @@ function SparkleRing() {
             width: s.size,
             height: s.size,
             top: s.top,
-            ...('right' in s ? { right: s.right } : { left: (s as any).left }),
+            ...('right' in s ? { right: s.right } : { left: 'left' in s ? s.left : undefined }),
             pointerEvents: 'none',
             animation: `sparkle-pulse ${s.dur} ${s.delay} ease-in-out infinite`,
             filter: 'blur(1px)',

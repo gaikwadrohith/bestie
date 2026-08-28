@@ -26,7 +26,7 @@ export const prefersReducedMotion =
 /** Rough GPU tier — used to scale effect count */
 export function getDeviceTier(): 'low' | 'mid' | 'high' {
   if (typeof window === 'undefined') return 'mid';
-  const mem = (navigator as unknown as { deviceMemory?: number }).deviceMemory ?? 4;
+  const mem = (navigator as { deviceMemory?: number }).deviceMemory ?? 4;
   const cores = navigator.hardwareConcurrency ?? 4;
   if (mem <= 2 || cores <= 2) return 'low';
   if (mem <= 4 || cores <= 4) return 'mid';

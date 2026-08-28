@@ -55,7 +55,7 @@ export function Navbar() {
           letterSpacing:'.03em', whiteSpace:'nowrap', overflow:'hidden',
           textOverflow:'ellipsis',
         }}>
-          Unknown — ROHIT &amp; PRIYA (PIUUU)
+          ROBLOX BESTFRIEND — ROHIT &amp; SHAIMA (SUKI)
         </span>
       </div>
 

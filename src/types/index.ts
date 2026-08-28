@@ -1,7 +1,7 @@
 export type Theme = 'light' | 'dark';
 
 export type Language =
-  | 'en' | 'te' | 'hi' | 'mr' | 'ja' | 'ur' | 'fr' | 'es';
+  | 'en' | 'te' | 'hi' | 'mr' | 'ja' | 'ur' | 'fr' | 'es' | 'ml';
 
 export interface SceneData {
   gif: string;
