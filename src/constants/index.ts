@@ -1,209 +1,223 @@
 import type { Language, LanguagePack } from '@/types';
 
+export const NAME =
+  (typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('name')) ||
+  'SHAIMA (SUKI)';
+
 export const LANGUAGE_PACKS: Record<Language, LanguagePack> = {
   ml: {
-  flag: '🌺', code: 'ML', name: 'Malayalam', nativeName: 'മലയാളം',
-  btnYes: 'അതെ, തീർച്ചയായും ✨',
-  btnNo: 'ഇല്ല 🙈',
-  footer: '~ റോഹിത്തിന് മാത്രം ഒരു ROBLOX BESTFRIEND ~',
-  loaderText: 'എന്തോ പ്രത്യേകമായത് വരുന്നു...',
-  celebrate: 'ROBLOX BESTFRIEND SOULMATES 🎉🎊💙✨',
-  scenes: {
-    initial: {
-      heading: 'നീ എന്റെ ROBLOX BESTFRIEND ആയി തുടരുമോ? 💖',
-      sub: '~ yes na… ROHIT-ന്റെ ROBLOX BESTFRIEND ആയി ഞാൻ തുടരും 🥂',
-    },
-    yes: {heading: 'എനിക്ക് അറിയാം SHAIMA (SUKI) 🫶',sub: 'നീ എന്നും എന്റെ ROBLOX BESTFRIEND ആയി തുടരുമെന്ന് 🤝✨',},
-    no: [
-      {heading: 'അയ്യോ, ഇത്ര എളുപ്പത്തിൽ no എന്ന് പറയുമോ? 🤨',sub: 'ഒരിക്കൽ എങ്കിലും എനിക്കായി ഒന്ന് ആലോചിക്കൂ 🫠'},
-      {heading: 'വെറുതെ random ആയി തീരുമാനിക്കണ്ട SHAIMA (SUKI) 😌',sub: 'നീ എന്റെ ROBLOX BESTFRIEND ആയി തന്നെ തുടരുമെന്ന് എനിക്ക് അറിയാം 👀'},
-      {heading: 'SHAIMA (SUKI), ഇനി മതി..! 😤',sub: 'നീ എന്റെ ROBLOX BESTFRIEND ആണെന്ന് എനിക്ക് അറിയാം 💙'},
-    ],
-  },
-  },
-  
-  en: {
-    flag: '🌸', code: 'EN', name: 'English', nativeName: 'English',
-    btnYes: 'Yes, always! ✨',
-    btnNo: 'No way 🙈',
-    footer: '~ Rohit is only YOUR ROBLOX BESTFRIEND ~',
-    loaderText: 'Something special is coming...',
-    celebrate: 'ROBLOX BESTFRIEND SOULMATES 🎉🎊💙✨',
+    flag: '🌺', code: 'ML', name: 'Malayalam', nativeName: 'മലയാളം',
+    btnYes: 'അതെ, തീർച്ചയായും 😏✨',
+    btnNo: 'ഇല്ല 🙈',
+    footer: '~ റോഹിത് നിനക്ക് മാത്രം സ്വന്തം 😘 ~',
+    loaderText: 'നിന്റെ ഹൃദയം കവരാൻ ഒരുങ്ങുന്നു...',
+    celebrate: 'ഇനി ഒഫീഷ്യൽ ആണ് 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: 'Will you be my ROBLOX BESTFRIEND? 💖',
-        sub: '~ Say yes… be ROHIT\'s closest ROBLOX BESTFRIEND forever 🥂',
+        heading: 'നീ എന്റേതാകുമോ? 💖',
+        sub: '~ yes na… ROHIT എന്നും നിന്റേത് മാത്രം 🥂',
       },
       yes: {
-        heading: 'I knew it, SHAIMA (SUKI) 🫶',
-        sub: 'You\'ll always be my closest ROBLOX BESTFRIEND, forever & ever 🤝✨',
+        heading: 'എനിക്ക് അറിയാമായിരുന്നു ' + NAME + ' 😏💘',
+        sub: 'നീ എന്റെ ദിവസം മനോഹരമാക്കി… ഇനി നിന്നെ വിടില്ല 🥂✨',
       },
       no: [
-        { heading: 'Seriously? That easy to say no? 🤨', sub: 'Think about it once more for me 🫠' },
-        { heading: 'Don\'t decide so fast, SHAIMA (SUKI) 😌', sub: 'I know you\'ll say yes eventually 👀' },
-        { heading: 'SHAIMA (SUKI)… okay, that\'s enough! 😤', sub: 'You\'re MY ROBLOX BESTFRIEND and I already know it 💙' },
+        { heading: 'അയ്യോ, ഇത്ര പെട്ടെന്ന് no പറയുമോ? 🥺', sub: 'ഒരിക്കൽ കൂടി എനിക്കായി ആലോചിക്കൂ 🫠' },
+        { heading: 'ജാഡ കാണിക്കണ്ട ' + NAME + ' 😌', sub: 'നീ yes പറയുമെന്ന് നമ്മൾ രണ്ടുപേർക്കും അറിയാം 👀' },
+        { heading: NAME + ', ഇനി മതി..! 😤', sub: 'നീ ഇതിനകം എന്റേതാണ്, Yes അമർത്തൂ 💙' },
       ],
     },
   },
-  te: {
-    flag: '🌺', code: 'TE', name: 'Telugu', nativeName: 'తెలుగు',
-    btnYes: 'అవును ఖచ్చితంగా ✨',
-    btnNo: 'లేదు 🙈',
-    footer: '~ రోహిత్ నీ ఒక్కదానికే ROBLOX BESTFRIEND ~',
-    loaderText: 'ఏదో ప్రత్యేకమైనది వస్తోంది...',
-    celebrate: 'ROBLOX BESTFRIEND SOULMATES 🎉🎊💙✨',
+
+  en: {
+    flag: '🌸', code: 'EN', name: 'English', nativeName: 'English',
+    btnYes: 'Yes, obviously 😏✨',
+    btnNo: 'No way 🙈',
+    footer: '~ Rohit is only yours, and you know it 😘 ~',
+    loaderText: 'Getting ready to steal your heart...',
+    celebrate: 'IT\'S OFFICIAL 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: 'నువ్వు నా ROBLOX BESTFRIEND గా ఉంటావా? 💖',
-        sub: '~ yes na… ROHIT ki ROBLOX BESTFRIEND ga untanu 🥂',
+        heading: 'Will you be mine? 💖',
+        sub: '~ Say yes… ROHIT promises to be worth it 🥂',
       },
       yes: {
-        heading: 'Nak telsu SHAIMA (SUKI) 🫶',
-        sub: 'nuvvu na ROBLOX BESTFRIEND laga ellapaudu untav ani 🤝✨',
+        heading: 'I knew it, ' + NAME + ' 😏💘',
+        sub: 'You just made my whole day… and I\'m not letting you go now 🥂✨',
       },
       no: [
-        { heading: 'Areyy antha easy ga noo antav enti? 🤨', sub: 'Okasari nakosam aalochinchu 🫠' },
-        { heading: 'Edho random ga decide avvaku SHAIMA (SUKI) 😌', sub: 'nak telsu nuvvu na ROBLOX BESTFRIEND ga ustav ani 👀' },
-        { heading: 'SHAIMA (SUKI) inka chalu..! 😤', sub: 'Nuvvu na ROBLOX BESTFRIEND ani nak telsu 💙' },
+        { heading: 'Aww, that hurt… try again? 🥺', sub: 'Come on, that\'s not the answer I was flirting for 🫠' },
+        { heading: 'Don\'t play hard to get, ' + NAME + ' 😌', sub: 'We both know you\'re gonna say yes 👀' },
+        { heading: NAME + '… okay, that\'s enough! 😤', sub: 'You\'re already mine, just tap Yes 💙' },
+      ],
+    },
+  },
+
+  te: {
+    flag: '🌺', code: 'TE', name: 'Telugu', nativeName: 'తెలుగు',
+    btnYes: 'అవును, తప్పకుండా 😏✨',
+    btnNo: 'లేదు 🙈',
+    footer: '~ రోహిత్ నీకు మాత్రమే సొంతం 😘 ~',
+    loaderText: 'నీ మనసు దొంగిలించడానికి రెడీ అవుతున్నా...',
+    celebrate: 'ఇప్పుడు ఆఫీషియల్ 🎉🎊💘✨',
+    scenes: {
+      initial: {
+        heading: 'నువ్వు నా దానివి అవుతావా? 💖',
+        sub: '~ yes na… ROHIT eppudu nee vaadey 🥂',
+      },
+      yes: {
+        heading: 'Nak telsu ' + NAME + ' 😏💘',
+        sub: 'nuvvu naa roju ni special chesav… ippudu ninnu vadhalanu 🥂✨',
+      },
+      no: [
+        { heading: 'Areyy appude noo antava? 🥺', sub: 'Okasari nakosam aalochinchu 🫠' },
+        { heading: 'Nakhralu cheyyaku ' + NAME + ' 😌', sub: 'manam iddaram ki telsu nuvvu yes antav ani 👀' },
+        { heading: NAME + ' inka chalu..! 😤', sub: 'Nuvvu already naa dhaanivi, Yes nokku 💙' },
       ],
     },
   },
 
   hi: {
     flag: '🪷', code: 'HI', name: 'Hindi', nativeName: 'हिन्दी',
-    btnYes: 'हाँ, हमेशा! ✨',
+    btnYes: 'हाँ, बिल्कुल! 😏✨',
     btnNo: 'नहीं 🙈',
-    footer: '~ रोहित सिर्फ तुम्हारा ROBLOX BESTFRIEND है ~',
-    loaderText: 'कुछ ख़ास आ रहा है...',
-    celebrate: 'ROBLOX BESTFRIEND SOULMATES तक 🎉🎊💙✨',
+    footer: '~ रोहित सिर्फ तुम्हारा है 😘 ~',
+    loaderText: 'तुम्हारा दिल चुराने की तैयारी हो रही है...',
+    celebrate: 'अब तो ऑफिशियल है 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: 'क्या तुम मेरी ROBLOX BESTFRIEND बनोगी? 💖',
-        sub: '~ हाँ बोलो… ROHIT की हमेशा की ROBLOX BESTFRIEND 🥂',
+        heading: 'क्या तुम मेरी बनोगी? 💖',
+        sub: '~ हाँ बोलो… ROHIT हमेशा तुम्हारा रहेगा 🥂',
       },
       yes: {
-        heading: 'मुझे पता था, SHAIMA (SUKI) 🫶',
-        sub: 'तुम हमेशा मेरी सबसे करीबी ROBLOX BESTFRIEND रहोगी 🤝✨',
+        heading: 'मुझे पता था, ' + NAME + ' 😏💘',
+        sub: 'तुमने मेरा दिन बना दिया… अब तुम्हें जाने नहीं दूँगा 🥂✨',
       },
       no: [
-        { heading: 'अरे! इतनी आसानी से नहीं? 🤨', sub: 'एक बार मेरे लिए सोचो 🫠' },
-        { heading: 'ऐसे जल्दी decide मत करो SHAIMA (SUKI) 😌', sub: 'मुझे पता है तुम हाँ बोलोगी 👀' },
-        { heading: 'SHAIMA (SUKI) बस कर! 😤', sub: 'तुम मेरी ROBLOX BESTFRIEND हो, मुझे पता है 💙' },
+        { heading: 'अरे! इतनी जल्दी ना? 🥺', sub: 'एक बार फिर सोचो, मेरे लिए 🫠' },
+        { heading: 'नखरे मत दिखाओ ' + NAME + ' 😌', sub: 'हम दोनों जानते हैं तुम हाँ ही बोलोगी 👀' },
+        { heading: NAME + ' बस कर! 😤', sub: 'तुम तो पहले से मेरी हो, बस Yes दबा दो 💙' },
       ],
     },
   },
+
   mr: {
     flag: '🌼', code: 'MR', name: 'Marathi', nativeName: 'मराठी',
-    btnYes: 'हो नक्कीच! ✨',
+    btnYes: 'हो, अर्थात! 😏✨',
     btnNo: 'नाही 🙈',
-    footer: '~ रोहित फक्त तुझाच ROBLOX BESTFRIEND आहे ~',
-    loaderText: 'काहीतरी खास येतंय...',
-    celebrate: 'ROBLOX BESTFRIEND SOULMATES 🎉🎊💙✨',
+    footer: '~ रोहित फक्त तुझाच आहे 😘 ~',
+    loaderText: 'तुझं मन जिंकायची तयारी सुरू आहे...',
+    celebrate: 'आता ऑफिशियल आहे 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: 'तू माझी ROBLOX BESTFRIEND होशील का? 💖',
-        sub: '~ हो सांग… ROHIT ची forever ROBLOX BESTFRIEND 🥂',
+        heading: 'तू माझी होशील का? 💖',
+        sub: '~ हो सांग… ROHIT कायम तुझाच 🥂',
       },
       yes: {
-        heading: 'मला माहीत होतं SHAIMA (SUKI) 🫶',
-        sub: 'तू नेहमीच माझी सगळ्यात जवळची ROBLOX BESTFRIEND राहशील 🤝✨',
+        heading: 'मला माहीत होतं ' + NAME + ' 😏💘',
+        sub: 'तू माझा दिवस बनवलास… आता तुला जाऊ देणार नाही 🥂✨',
       },
       no: [
-        { heading: 'अगं! इतकं सहज नाही सांगायचं? 🤨', sub: 'एकदा माझ्यासाठी विचार कर 🫠' },
-        { heading: 'असं लवकर ठरवू नकोस SHAIMA (SUKI) 😌', sub: 'मला माहीत आहे तू हो सांगशील 👀' },
-        { heading: 'SHAIMA (SUKI) आता बास! 😤', sub: 'तू माझी ROBLOX BESTFRIEND आहेस, हे मला माहीत आहे 💙' },
+        { heading: 'अरेरे! इतक्या लवकर नाही? 🥺', sub: 'एकदा माझ्यासाठी परत विचार कर 🫠' },
+        { heading: 'नखरे करू नकोस ' + NAME + ' 😌', sub: 'आपल्या दोघांना माहीत आहे तू हो म्हणणार 👀' },
+        { heading: NAME + ' आता बास! 😤', sub: 'तू आधीच माझी आहेस, फक्त Yes दाब 💙' },
       ],
     },
   },
+
   ja: {
     flag: '⛩️', code: 'JA', name: 'Japanese', nativeName: '日本語',
-    btnYes: 'はい、いつも！✨',
+    btnYes: 'はい、もちろん！😏✨',
     btnNo: 'いいえ 🙈',
-    footer: '~ ロヒトはあなただけのROBLOX BESTFRIEND ~',
-    loaderText: '特別なものがやってくる...',
-    celebrate: 'ROBLOX BESTFRIEND から SOULMATES へ 🎉🎊💙✨',
+    footer: '~ ロヒトはあなただけのもの 😘 ~',
+    loaderText: 'あなたの心を奪う準備中...',
+    celebrate: 'これで正式に決まり 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: '僕のROBLOX BESTFRIENDになってくれる ?💖',
-        sub: '〜 はいって言って…ROHITの永遠のROBLOX BESTFRIEND 🥂',
+        heading: '僕のものになってくれる？💖',
+        sub: '〜 はいって言って…ROHITはずっとあなただけ 🥂',
       },
       yes: {
-        heading: 'わかってた、SHAIMA (SUKI) 🫶',
-        sub: 'ずっとずっと大切なROBLOX BESTFRIENDだよ 🤝✨',
+        heading: 'わかってた、' + NAME + ' 😏💘',
+        sub: '今日を最高の日にしてくれた…もう離さないよ 🥂✨',
       },
       no: [
-        { heading: 'え！そんなに簡単に？🤨', sub: 'もう一度だけ考えてみて 🫠' },
-        { heading: 'そんなに急いで決めないで SHAIMA (SUKI) 😌', sub: '絶対にはいって言ってくれるよ 👀' },
-        { heading: 'SHAIMA (SUKI)、もういいよ！😤', sub: 'あなたは私のROBLOX BESTFRIEND、それは知ってる 💙' },
+        { heading: 'え、そんなに早く？🥺', sub: 'もう一度だけ考えてみて 🫠' },
+        { heading: 'ツンツンしないで ' + NAME + ' 😌', sub: '本当は「はい」って言うって、二人とも知ってる 👀' },
+        { heading: NAME + '、もういいよ！😤', sub: 'もう僕のものなんだから、「はい」を押して 💙' },
       ],
     },
   },
+
   ur: {
     flag: '🌙', code: 'UR', name: 'Urdu', nativeName: 'اردو',
-    btnYes: 'ہاں، ہمیشہ! ✨',
+    btnYes: 'ہاں، بالکل! 😏✨',
     btnNo: 'نہیں 🙈',
-    footer: '~ روہت صرف آپ کا ROBLOX BESTFRIEND ہے ~',
-    loaderText: 'کچھ خاص آ رہا ہے...',
-    celebrate: 'ROBLOX BESTFRIEND سے SOULMATES تک 🎉🎊💙✨',
+    footer: '~ روہت صرف آپ کا ہے 😘 ~',
+    loaderText: 'آپ کا دل چرانے کی تیاری ہو رہی ہے...',
+    celebrate: 'اب یہ آفیشل ہے 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: 'کیا آپ میری ROBLOX BESTFRIEND بنیں گی؟ 💖',
-        sub: '~ ہاں کہو… ROHIT کی ہمیشہ کی ROBLOX BESTFRIEND 🥂',
+        heading: 'کیا آپ میری بنیں گی؟ 💖',
+        sub: '~ ہاں کہو… ROHIT ہمیشہ آپ کا رہے گا 🥂',
       },
       yes: {
-        heading: 'مجھے معلوم تھا، SHAIMA (SUKI) 🫶',
-        sub: 'آپ ہمیشہ میری قریب ترین ROBLOX BESTFRIEND رہیں گی 🤝✨',
+        heading: 'مجھے معلوم تھا، ' + NAME + ' 😏💘',
+        sub: 'آپ نے میرا دن بنا دیا… اب آپ کو جانے نہیں دوں گا 🥂✨',
       },
       no: [
-        { heading: 'سچ میں؟ اتنی آسانی سے؟ 🤨', sub: 'ایک بار میرے لیے سوچیں 🫠' },
-        { heading: 'ایسے جلدی فیصلہ مت کریں SHAIMA (SUKI) 😌', sub: 'مجھے یقین ہے آپ ہاں کہیں گی 👀' },
-        { heading: 'SHAIMA (SUKI) بس کریں! 😤', sub: 'آپ میری ROBLOX BESTFRIEND ہیں، یہ مجھے معلوم ہے 💙' },
+        { heading: 'ارے! اتنی جلدی نہیں؟ 🥺', sub: 'ایک بار میرے لیے پھر سوچیں 🫠' },
+        { heading: 'نخرے مت دکھائیں ' + NAME + ' 😌', sub: 'ہم دونوں جانتے ہیں آپ ہاں ہی کہیں گی 👀' },
+        { heading: NAME + ' بس کریں! 😤', sub: 'آپ تو پہلے ہی میری ہیں، بس Yes دبا دیں 💙' },
       ],
     },
   },
+
   fr: {
     flag: '🥐', code: 'FR', name: 'French', nativeName: 'Français',
-    btnYes: 'Oui, toujours ! ✨',
+    btnYes: 'Oui, évidemment ! 😏✨',
     btnNo: 'Non 🙈',
-    footer: '~ Rohit est ton seul ROBLOX BESTFRIEND ~',
-    loaderText: 'Quelque chose de spécial arrive...',
-    celebrate: 'D\'ROBLOX BESTFRIEND À SOULMATES 🎉🎊💙✨',
+    footer: '~ Rohit est rien qu\'à toi 😘 ~',
+    loaderText: 'Je prépare de quoi voler ton cœur...',
+    celebrate: 'C\'EST OFFICIEL 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: 'Seras-tu mon ROBLOX BESTFRIEND ? 💖',
-        sub: '~ Dis oui… pour être l\'ROBLOX BESTFRIEND de ROHIT pour toujours 🥂',
+        heading: 'Voudras-tu être à moi ? 💖',
+        sub: '~ Dis oui… ROHIT sera à toi pour toujours 🥂',
       },
       yes: {
-        heading: 'Je le savais, SHAIMA (SUKI) 🫶',
-        sub: 'Tu seras toujours mon ROBLOX BESTFRIEND le plus proche, pour toujours 🤝✨',
+        heading: 'Je le savais, ' + NAME + ' 😏💘',
+        sub: 'Tu as rendu ma journée parfaite… je ne te laisse plus partir 🥂✨',
       },
       no: [
-        { heading: 'Sérieusement ? Si facilement ? 🤨', sub: 'Réfléchis-y encore une fois pour moi 🫠' },
-        { heading: 'Ne décide pas si vite, SHAIMA (SUKI) 😌', sub: 'Je sais que tu diras oui finalement 👀' },
-        { heading: 'SHAIMA (SUKI)… ça suffit maintenant ! 😤', sub: 'Tu es mon ROBLOX BESTFRIEND et je le sais déjà 💙' },
+        { heading: 'Aïe, si vite ? 🥺', sub: 'Réfléchis-y encore une fois pour moi 🫠' },
+        { heading: 'Ne fais pas ta difficile, ' + NAME + ' 😌', sub: 'On sait tous les deux que tu diras oui 👀' },
+        { heading: NAME + '… ça suffit maintenant ! 😤', sub: 'Tu es déjà à moi, appuie sur Oui 💙' },
       ],
     },
   },
+
   es: {
     flag: '🌹', code: 'ES', name: 'Spanish', nativeName: 'Español',
-    btnYes: '¡Sí, siempre! ✨',
+    btnYes: '¡Sí, obvio! 😏✨',
     btnNo: 'No 🙈',
-    footer: '~ Rohit es solo TU ROBLOX BESTFRIEND ~',
-    loaderText: 'Algo especial está llegando...',
-    celebrate: '¡DE ROBLOX BESTFRIEND A SOULMATES! 🎉🎊💙✨',
+    footer: '~ Rohit es solo tuyo 😘 ~',
+    loaderText: 'Preparando algo para robarte el corazón...',
+    celebrate: '¡AHORA ES OFICIAL! 🎉🎊💘✨',
     scenes: {
       initial: {
-        heading: '¿Serás mi ROBLOX BESTFRIEND? 💖',
-        sub: '~ Di que sí… sé el ROBLOX BESTFRIEND de ROHIT para siempre 🥂',
+        heading: '¿Serás mía? 💖',
+        sub: '~ Di que sí… ROHIT será tuyo para siempre 🥂',
       },
       yes: {
-        heading: 'Lo sabía, SHAIMA (SUKI) 🫶',
-        sub: 'Siempre serás mi ROBLOX BESTFRIEND más cercana, para siempre 🤝✨',
+        heading: 'Lo sabía, ' + NAME + ' 😏💘',
+        sub: 'Me hiciste el día… y ya no te dejo ir 🥂✨',
       },
       no: [
-        { heading: '¿En serio? ¿Tan fácil? 🤨', sub: 'Piénsalo una vez más por mí 🫠' },
-        { heading: 'No decidas tan rápido, SHAIMA (SUKI) 😌', sub: 'Sé que al final dirás que sí 👀' },
-        { heading: 'SHAIMA (SUKI)… ¡ya basta! 😤', sub: 'Eres mi ROBLOX BESTFRIEND y ya lo sé 💙' },
+        { heading: 'Ay, ¿tan rápido? 🥺', sub: 'Piénsalo una vez más por mí 🫠' },
+        { heading: 'No te hagas la difícil, ' + NAME + ' 😌', sub: 'Los dos sabemos que dirás que sí 👀' },
+        { heading: NAME + '… ¡ya basta! 😤', sub: 'Ya eres mía, solo pulsa Sí 💙' },
       ],
     },
   },
