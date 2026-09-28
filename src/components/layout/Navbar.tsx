@@ -75,7 +75,7 @@ export function Navbar() {
             textOverflow: "ellipsis",
           }}
         >
-          ROHIT &amp; {NAME} 💘
+          Rohit &amp; {NAME} 💘
         </span>
       </div>
 
