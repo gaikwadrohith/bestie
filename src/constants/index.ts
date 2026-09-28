@@ -3,7 +3,7 @@ import type { Language, LanguagePack } from '@/types';
 export const NAME =
   (typeof window !== 'undefined' &&
     new URLSearchParams(window.location.search).get('name')) ||
-  'SHAIMA (SUKI)';
+  'LOML';
 
 export const LANGUAGE_PACKS: Record<Language, LanguagePack> = {
   ml: {
